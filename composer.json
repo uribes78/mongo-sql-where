@@ -1,0 +1,24 @@
+{
+  "name": "tico/mongo-sql-where",
+  "description": "Convert MongoDB-style queries into SQL WHERE clauses in PHP",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Saúl",
+      "email": "s4ulu4@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Tico\\MongoSqlWhere\\": "src/"
+    }
+  },
+  "require": {
+    "php": ">=8.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
+  }
+}
+
