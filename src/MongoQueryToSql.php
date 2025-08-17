@@ -4,16 +4,21 @@ namespace Tico\MongoSqlWhere;
 
 class MongoQueryToSql {
     private array $columnMap;
+    private bool $includeWhereVerb;
 
-    public function __construct(array $columnMap = [])
+    public function __construct(
+        array $columnMap = [],
+        bool $includeWhereVerb = true
+    )
     {
         $this->columnMap = $columnMap;
+        $this->includeWhereVerb = $includeWhereVerb;
     }
 
     public function convert(array $query): string
     {
         $clauses = $this->parse($query);
-        return 'WHERE ' . implode(' AND ', $clauses);
+        return ($this->includeWhereVerb ? ' WHERE ': '') . implode(' AND ', $clauses);
     }
 
     private function parse(array $query): array
